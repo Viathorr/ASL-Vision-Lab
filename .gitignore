@@ -1,0 +1,25 @@
+# Ignore all 'data' directories at any level
+**/data/
+**/*.csv
+**/*.json
+**/*.xlsx
+**/*.parquet
+**/*.h5
+**/*.hdf5
+**/*.zip
+**/*.tar
+**/*.gz
+**/*.rar
+**/*.7z
+**/*.db
+**/*.sqlite
+
+**/.idea/
+**/*.iml
+
+**/.ipynb_checkpoints/
+**/.vscode/
+**/.settings/
+**/*.code-workspace
+
+**/__pycache__/
