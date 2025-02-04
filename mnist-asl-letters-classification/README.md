@@ -2,7 +2,7 @@
 
 ### The American Sign Language letter database of hand gestures represent a multi-class problem with 24 classes of letters (excluding J and Z which require motion).
 
-![image.png](attachment:81cd4dcf-0243-400d-9e71-a571559e9c17.png)
+![image.png](data\american_sign_language.PNG)
 
 ## Dataset
 
@@ -20,4 +20,4 @@ The CNN model used for classification consists of **three convolutional layers**
 
 ## Tracking with Weights & Biases (WandB)
 
-To monitor training metrics, visualize performance, and compare experiments, Weights & Biases was integrated into the training pipeline. (**Link**)[https://wandb.ai/viathorrr/ASL%20Alphabet%20Classification%20with%20PyTorch?nw=nwuserviathorr]
+To monitor training metrics, visualize performance, and compare experiments, Weights & Biases was integrated into the training pipeline. [**Link**](https://wandb.ai/viathorrr/ASL%20Alphabet%20Classification%20with%20PyTorch?nw=nwuserviathorr)
