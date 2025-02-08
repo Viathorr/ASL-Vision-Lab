@@ -1,5 +1,9 @@
-# Ignore all 'data' directories at any level
+**/models/checkpoints/*.pth
+**/models/pretrained/*.pth
+
 **/data/
+
+**/reports/figures/*
 **/*.csv
 **/*.json
 **/*.xlsx

@@ -1,8 +1,6 @@
-# ASL Letters Classification with PyTorch and Sing Language MNIST Dataset (achieving $99%$ Accuracy)
+# ASL Letters Classification with PyTorch and Sing Language MNIST Dataset (achieving $99$% Accuracy)
 
 ### The American Sign Language letter database of hand gestures represent a multi-class problem with 24 classes of letters (excluding J and Z which require motion).
-
-![image.png](data/american_sign_language.PNG)
 
 ## Dataset
 
