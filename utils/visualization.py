@@ -6,14 +6,13 @@ import pandas as pd
 from PIL import Image  # Python Imaging Library for image manipulation
 import matplotlib
 import matplotlib.pyplot as plt  # Plotting library for visualization
+from sklearn.metrics import confusion_matrix
+import seaborn as sns
 
 import torch
 import wandb
 
-data_utils_path = os.path.abspath(os.path.join(os.getcwd(), "utils"))
-sys.path.append(data_utils_path)
-
-import data_utils as du
+import utils.data_utils as du
 
 FIGS_DIR = os.path.abspath(os.path.join("..", "reports", "figures"))
 
@@ -155,3 +154,25 @@ def plot_loss_curves(results: dict) -> None:
   plt.title("Accuracy")
   plt.xlabel("Epochs")
   plt.legend()
+  
+  
+def plot_confusion_matrix(y_true: torch.Tensor, y_pred: torch.Tensor, class_names: list) -> None:
+  """
+  Plot the confusion matrix.
+
+  Args:
+    y_true (torch.Tensor): True labels.
+    y_pred (torch.Tensor): Predicted labels.
+    class_names (list): List of class names.
+  """
+  cm = confusion_matrix(y_true, y_pred)
+
+  plt.figure(figsize=(12, 12))
+  sns.heatmap(cm, annot=True, fmt="d", annot_kws={"size": 14}, linewidths=1, square=True, cmap="coolwarm", xticklabels=class_names, yticklabels=class_names)
+
+  plt.xlabel("Predicted Label", fontsize=14)
+  plt.ylabel("True Label", fontsize=14)
+  plt.title("Confusion Matrix", fontsize=14)
+
+  plt.tight_layout()
+  plt.show()

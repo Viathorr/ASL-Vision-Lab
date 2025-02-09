@@ -1,12 +1,7 @@
 from torch.utils.data import Dataset
 import pandas as pd
-import os
-import sys
 
-data_utils_path = os.path.abspath(os.path.join(os.getcwd(), "utils"))
-sys.path.append(data_utils_path)
-
-import data_utils as du
+import utils.data_utils as du
 
 
 class ASLAlphabetMNISTDataset(Dataset):
