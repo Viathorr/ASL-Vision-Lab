@@ -1,5 +1,8 @@
 *.egg-info/
 
+**/.env
+**/wandb/
+
 **/models/checkpoints/*.pth
 **/models/pretrained/*.pth
 

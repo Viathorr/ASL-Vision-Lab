@@ -145,8 +145,8 @@ def train_model(model: nn.Module,
             "val_acc": []}
 
   for epoch in tqdm(range(num_epochs)):
-    train_loss, train_acc = train_step(model, train_dataloader, criterion, acc_fn, num_classes, optimizer, device)
-    val_loss, val_acc = val_step(model, val_dataloader, criterion, acc_fn, num_classes, device)
+    train_loss, train_acc = train_step(model, train_dataloader, criterion, acc_fn, num_classes, optimizer, device, run=run)
+    val_loss, val_acc = val_step(model, val_dataloader, criterion, acc_fn, num_classes, device, run=run)
 
     if lr_scheduler: 
       if run: 
