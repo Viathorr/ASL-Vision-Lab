@@ -8,7 +8,7 @@ from torch.utils.data import DataLoader
 import pandas as pd
 from utils.transforms import asl_mnist_train_transforms, asl_mnist_test_transforms
 from utils.training_utils import train_model
-from utils.metrics import accuracy
+import torchmetrics
 from mnist_asl_letters_classification.models.asl_classifier_cnn_model import ASLAlphabetClassifier
 from datasets.asl_mnist_dataset import ASLAlphabetMNISTDataset
 import wandb
@@ -79,8 +79,9 @@ model = ASLAlphabetClassifier(in_channels=1, num_classes=num_classes).to(device)
 optimizer = optim.Adam(model.parameters(), lr=LR)
 lr_scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode="max", factor=0.5, patience=4)
 
-# Loss function
+# Loss & Accuracy functions
 criterion = nn.CrossEntropyLoss()
+accuracy = torchmetrics.Accuracy(task="multiclass", num_classes=num_classes)
 
 # Training
 start_time = time.time()

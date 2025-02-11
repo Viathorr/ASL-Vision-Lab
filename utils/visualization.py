@@ -156,7 +156,7 @@ def plot_loss_curves(results: dict) -> None:
   plt.legend()
   
   
-def plot_confusion_matrix(y_true: torch.Tensor, y_pred: torch.Tensor, class_names: list) -> None:
+def plot_confusion_matrix(y_true: torch.Tensor, y_pred: torch.Tensor, class_names: list) -> matplotlib.figure.Figure:
   """
   Plot the confusion matrix.
 
@@ -164,10 +164,13 @@ def plot_confusion_matrix(y_true: torch.Tensor, y_pred: torch.Tensor, class_name
     y_true (torch.Tensor): True labels.
     y_pred (torch.Tensor): Predicted labels.
     class_names (list): List of class names.
+    
+  Returns:
+    matplotlib.figure.Figure: The generated figure.
   """
   cm = confusion_matrix(y_true, y_pred)
 
-  plt.figure(figsize=(12, 12))
+  fig = plt.figure(figsize=(12, 12))
   sns.heatmap(cm, annot=True, fmt="d", annot_kws={"size": 14}, linewidths=1, square=True, cmap="coolwarm", xticklabels=class_names, yticklabels=class_names)
 
   plt.xlabel("Predicted Label", fontsize=14)
@@ -176,3 +179,5 @@ def plot_confusion_matrix(y_true: torch.Tensor, y_pred: torch.Tensor, class_name
 
   plt.tight_layout()
   plt.show()
+  
+  return fig
