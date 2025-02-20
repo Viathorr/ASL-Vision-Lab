@@ -1,7 +1,7 @@
 from torch.utils.data import Dataset
 import pandas as pd
 
-import utils.data_utils as du
+import mnist_asl_letters_classification.utils.image_processing as ip
 
 
 class ASLAlphabetMNISTDataset(Dataset):
@@ -19,7 +19,7 @@ class ASLAlphabetMNISTDataset(Dataset):
     label = image_data[0]
     pixels = image_data[1:]
 
-    image = du.pixel_values_to_image(pixels)
+    image = ip.pixel_values_to_image(pixels)
 
     if self.transforms:
       image = self.transforms(image)
