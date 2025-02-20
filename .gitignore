@@ -3,6 +3,8 @@
 **/.env
 **/wandb/
 
+mnist_asl_letters_classification/setup.py
+
 **/models/checkpoints/*.pth
 **/models/pretrained/*.pth
 
