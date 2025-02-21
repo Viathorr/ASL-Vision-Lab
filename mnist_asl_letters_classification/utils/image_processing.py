@@ -14,7 +14,7 @@ def preprocess_image(image_bytes):
   Returns:
     a preprocessed 3D tensor of size (1, 28, 28)
   """
-  image = Image.open(io.BytesIO(image_bytes)).convert("L")
+  image = Image.open(io.BytesIO(image_bytes))
   image = asl_mnist_inference_transforms(image).unsqueeze(0)  
   return image
 

@@ -4,6 +4,7 @@
 **/wandb/
 
 mnist_asl_letters_classification/setup.py
+mnist_asl_letters_classification/notebooks/model_inference.ipynb
 
 **/models/checkpoints/*.pth
 **/models/pretrained/*.pth
@@ -12,6 +13,9 @@ mnist_asl_letters_classification/setup.py
 
 **/reports/figures/*
 **/*.csv
+**/*.png
+**/*.jpg
+**/*.jpeg
 **/*.json
 **/*.xlsx
 **/*.parquet
