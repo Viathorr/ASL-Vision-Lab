@@ -14,3 +14,10 @@ asl_mnist_test_transforms = transforms.Compose([
   transforms.ToTensor(), 
   transforms.Normalize(mean=(0.1307,), std=(0.3081,))
 ])
+
+asl_mnist_inference_transforms = transforms.Compose([
+  transforms.Grayscale(),
+  transforms.Resize((28, 28)),
+  transforms.ToTensor(), 
+  transforms.Normalize(mean=(0.1307,), std=(0.3081,))
+])

@@ -5,7 +5,7 @@ from torch.utils.data import DataLoader
 import pandas as pd
 from mnist_asl_letters_classification.models.asl_classifier_cnn_model import ASLAlphabetClassifier
 from datasets.asl_mnist_dataset import ASLAlphabetMNISTDataset
-from utils.transforms import asl_mnist_test_transforms
+from mnist_asl_letters_classification.utils.transforms import asl_mnist_test_transforms
 from utils.training_utils import get_predictions
 
 current_dir = os.path.dirname(os.path.abspath(__file__))

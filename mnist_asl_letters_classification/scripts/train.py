@@ -6,7 +6,7 @@ import torch.optim as optim
 import torch.nn as nn
 from torch.utils.data import DataLoader
 import pandas as pd
-from utils.transforms import asl_mnist_train_transforms, asl_mnist_test_transforms
+from mnist_asl_letters_classification.utils.transforms import asl_mnist_train_transforms, asl_mnist_test_transforms
 from utils.training_utils import train_model
 import torchmetrics
 from mnist_asl_letters_classification.models.asl_classifier_cnn_model import ASLAlphabetClassifier

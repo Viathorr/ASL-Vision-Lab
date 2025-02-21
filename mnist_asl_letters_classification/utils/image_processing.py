@@ -1,28 +1,22 @@
 from PIL import Image
 import torchvision.transforms as transforms
 import io
-
-transform = transforms.Compose([
-    transforms.Grayscale(),
-    transforms.Resize((28, 28)),
-    transforms.ToTensor(),
-    transforms.Normalize(mean=(0.1307,), std=(0.3081,))
-])
-
+import numpy as np
+from mnist_asl_letters_classification.utils.transforms import asl_mnist_inference_transforms
 
 def preprocess_image(image_bytes):
-    """
-    Preprocess an image byte stream for inference.
+  """
+  Preprocess an image byte stream for inference.
 
-    Args:
-        image_bytes: an image byte stream
+  Args:
+    image_bytes: an image byte stream
 
-    Returns:
-        a preprocessed 3D tensor of size (1, 28, 28)
-    """
-    image = Image.open(io.BytesIO(image_bytes)).convert("L")
-    image = transform(image).unsqueeze(0)  
-    return image
+  Returns:
+    a preprocessed 3D tensor of size (1, 28, 28)
+  """
+  image = Image.open(io.BytesIO(image_bytes)).convert("L")
+  image = asl_mnist_inference_transforms(image).unsqueeze(0)  
+  return image
 
 
 # Defining a function to convert pixel values to images
