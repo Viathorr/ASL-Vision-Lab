@@ -5,15 +5,15 @@
 
 mnist_asl_letters_classification/setup.py
 mnist_asl_letters_classification/notebooks/model_inference.ipynb
+mnist_asl_letters_classification/reports/figures/general
+mnist_asl_letters_classification/notebooks/image.png
 
 **/models/checkpoints/*.pth
 **/models/pretrained/*.pth
 
 **/data/
 
-**/reports/figures/*
 **/*.csv
-**/*.png
 **/*.jpg
 **/*.jpeg
 **/*.json
