@@ -2,7 +2,7 @@ from PIL import Image
 import torchvision.transforms as transforms
 import io
 import numpy as np
-from mnist_asl_letters_classification.utils.transforms import asl_mnist_inference_transforms
+from utils.transforms import asl_mnist_inference_transforms
 
 def preprocess_image(image_bytes):
   """

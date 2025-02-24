@@ -1,6 +1,6 @@
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
-from mnist_asl_letters_classification.api.inference import predict
+from api.inference import predict
 
 app = FastAPI()
 

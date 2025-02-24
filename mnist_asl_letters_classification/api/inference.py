@@ -1,7 +1,7 @@
 import os
 import torch
-from mnist_asl_letters_classification.models.asl_classifier_cnn_model import ASLAlphabetClassifier
-from mnist_asl_letters_classification.utils.image_processing import preprocess_image
+from models.asl_classifier_cnn_model import ASLAlphabetClassifier
+from utils.image_processing import preprocess_image
 
 
 current_dir = os.path.dirname(os.path.abspath(__file__))

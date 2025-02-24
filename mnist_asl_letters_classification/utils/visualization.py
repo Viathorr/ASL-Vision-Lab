@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt  # Plotting library for visualization
 import torch
 import wandb
 
-import mnist_asl_letters_classification.utils.image_processing as ip
+import utils.image_processing as ip
 
 
 # Create a dictionary mapping numbers (0-25) to alphabet letters (A-Z) (for ASL MNIST dataset)
