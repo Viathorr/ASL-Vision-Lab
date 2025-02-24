@@ -25,11 +25,13 @@ def predict(image):
     tuple: A tuple containing:
       - predicted_class (int): The index of the predicted class.
       - class_name (str): The corresponding class name from 'A' to 'Z', excluding 'J' and 'Z'.
+      - predicted_prob (float): The predicted probability of the predicted class.
   """
   preprocessed_image = preprocess_image(image)
   
   with torch.inference_mode():
     output = model(preprocessed_image)
-    predicted_class = output.argmax(dim=1).item()
+    y_probs = torch.softmax(output, dim=1)
+    predicted_prob, predicted_class = torch.max(y_probs, dim=1)
     
-    return predicted_class, class_names[predicted_class]
+    return predicted_class.item(), class_names[predicted_class.item()], predicted_prob.item()
